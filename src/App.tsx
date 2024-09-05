@@ -25,9 +25,10 @@ useEffect(() =>{
     {
       users.map(user=>(
         <article>
-          <p>Id: {user.id}</p>
           <h1>Name: {user.name}</h1>
+          <p>Race: {user.race}</p>
           <p>Ki: {user.ki}</p>
+          <p>Gender: {user.gender}</p>
           <img src={user.image} alt="character" />
         </article>
   ))
@@ -37,3 +38,10 @@ useEffect(() =>{
 }
 
 export default App
+
+
+/** Consume este endpoint https://dragonball-api.com/api/characters
+ * Necesito name, ki, race, Namekian, gender, Male, image 
+ * Agrega CSS para que se vean legibles, puedes usar bootstrap
+ * Crear variable de entorno para usar la API
+ */

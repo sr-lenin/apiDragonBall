@@ -4,6 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { getUserData } from './helpers/getUserData'
 import { users } from './interfaces/usersInterfaces'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from '../src/images/logo_dragonballapi.jpg';
+
 
 
 function App() {
@@ -20,24 +23,29 @@ useEffect(() =>{
   data()
 },[])
   return (
-   <div className='App'>
-    <h1>Fetching</h1>
-    {
-      users.map(user=>(
-        <article>
-          <h1>Name: {user.name}</h1>
-          <p>Race: {user.race}</p>
-          <p>Ki: {user.ki}</p>
-          <p>Gender: {user.gender}</p>
-          <img src={user.image} alt="character" />
-        </article>
-  ))
-    }
-   </div>
-  )
-}
-
-export default App
+        <div className='App container'>
+          <h1 className="text-center my-4">Dragon Ball</h1>
+          <img src={logo} width={"700px"} ></img>
+          <div className="row">
+            {users.map((user, index) => (
+              <div className="col-md-4 mb-4" key={index}>
+                <article className="card">
+                  <img src={user.image} alt="character" className="card-img-top" />
+                  <div className="card-body">
+                    <h2 className="card-title">Name: {user.name}</h2>
+                    <p className="card-text">Race: {user.race}</p>
+                    <p className="card-text">Ki: {user.ki}</p>
+                    <p className="card-text">Gender: {user.gender}</p>
+                  </div>
+                </article>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    };
+    
+    export default App;
 
 
 /** Consume este endpoint https://dragonball-api.com/api/characters

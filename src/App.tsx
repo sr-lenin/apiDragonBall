@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import './style.css'
 import { getUserData } from './helpers/getUserData'
 import { users } from './interfaces/usersInterfaces'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,7 +31,7 @@ useEffect(() =>{
             {users.map((user, index) => (
               <div className="col-md-4 mb-4" key={index}>
                 <article className="card">
-                  <img src={user.image} alt="character" className="card-img-top" />
+                  <img src={user.image} alt="character" className="card-img-top img-edit"  />
                   <div className="card-body">
                     <h2 className="card-title">Name: {user.name}</h2>
                     <p className="card-text">Race: {user.race}</p>
